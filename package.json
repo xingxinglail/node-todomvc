@@ -1,0 +1,17 @@
+{
+  "name": "node-todomvc",
+  "version": "0.0.2",
+  "bin": {
+    "t": "cli.js"
+  },
+  "files": [
+    "*.js"
+  ],
+  "main": "index.js",
+  "author": "star",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^3.0.2",
+    "inquirer": "^7.0.0"
+  }
+}
