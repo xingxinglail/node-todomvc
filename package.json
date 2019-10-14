@@ -8,10 +8,16 @@
     "*.js"
   ],
   "main": "index.js",
+  "scripts": {
+    "test": "npx jest"
+  },
   "author": "star",
   "license": "MIT",
   "dependencies": {
     "commander": "^3.0.2",
     "inquirer": "^7.0.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }

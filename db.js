@@ -6,15 +6,16 @@ const home = process.env.HOME || homedir
 const dbPath = path.join(home, '.todo')
 
 const db = {
-    read () {
+    read (path = dbPath) {
         return new Promise((resolve, reject) => {
-            fs.readFile(dbPath, { flag: 'a+' }, (err, data) => {
+            fs.readFile(path, { flag: 'a+' }, (err, data) => {
                 if (err) {
                     reject(err)
                 } else {
                     data = data.toString()
                     try {
                         data = JSON.parse(data)
+
                     } catch (e) {
                         data = []
                     }
@@ -23,10 +24,10 @@ const db = {
             })
         })
     },
-    write (data) {
+    write (data, path = dbPath) {
         data = data ? JSON.stringify(data) : data
         return new Promise((resolve, reject) => {
-            fs.writeFile(dbPath, data, err => {
+            fs.writeFile(path, data, err => {
                 if (err) {
                     reject(err)
                 } else {
