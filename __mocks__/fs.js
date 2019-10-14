@@ -33,4 +33,9 @@ fs.writeFile = (path, data, options, callback) => {
     }
 }
 
+fs.clearMocks = () => {
+    readMocks = {}
+    writeMocks = {}
+}
+
 module.exports = fs
